@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Турарбек Кайрош — QA Engineer</title>
+<meta name="description" content="Резюме: QA Engineer / Developer. Автоматизация тестирования (Python, pytest, Playwright, Cypress), API, SQL, Docker, CI/CD. Кульсары, Казахстан.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Турарбек Кайрош — QA Engineer / Developer">
+<meta property="og:description" content="Автоматизация тестирования, API, SQL, разработка. Резюме онлайн.">
+<meta property="og:url" content="https://xmmm19.github.io/resume/">
+<meta property="og:image" content="https://xmmm19.github.io/resume/photo.jpg">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETK%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #16181d;
+  --muted: #5d6470;
+  --line: #e4e7ec;
+  --accent: #0f766e;
+  --accent-soft: #e6f4f2;
+  --chip: #f0f2f5;
+  --shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1115;
+    --card: #171a20;
+    --text: #e8eaed;
+    --muted: #9aa1ac;
+    --line: #2a2f38;
+    --accent: #2dd4bf;
+    --accent-soft: #12302d;
+    --chip: #222730;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1115; --card: #171a20; --text: #e8eaed; --muted: #9aa1ac;
+  --line: #2a2f38; --accent: #2dd4bf; --accent-soft: #12302d; --chip: #222730; --shadow: none;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+html[data-lang="ru"] [data-l="en"],
+html[data-lang="en"] [data-l="ru"] { display: none !important; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* top bar */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 12px; }
+.topbar .brand { font-weight: 700; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tools { display: flex; gap: 8px; align-items: center; }
+.seg { display: inline-flex; background: var(--chip); border-radius: 999px; padding: 3px; }
+.seg button {
+  border: 0; background: transparent; color: var(--muted);
+  font: 600 13px/1 inherit; font-family: inherit;
+  padding: 7px 12px; border-radius: 999px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--card); color: var(--text); box-shadow: var(--shadow); }
+.iconbtn {
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; cursor: pointer;
+}
+svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* hero */
+.hero { padding: 24px 0 8px; }
+.hero-top { display: flex; gap: 16px; align-items: center; }
+.avatar {
+  width: 96px; height: 96px; border-radius: 20px; object-fit: cover; object-position: 50% 30%;
+  flex: none; background: var(--chip); box-shadow: var(--shadow);
+}
+h1 { font-size: 26px; line-height: 1.15; margin: 0 0 6px; letter-spacing: -.01em; }
+.role { font-size: 16px; font-weight: 600; color: var(--accent); margin: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; color: var(--muted); font-size: 14px; margin-top: 14px; }
+.meta span { display: inline-flex; align-items: center; gap: 6px; }
+.meta svg.i { width: 15px; height: 15px; }
+
+.contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.contacts a {
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 10px 12px; color: var(--text); font-size: 14px;
+}
+.contacts a:hover { text-decoration: none; border-color: var(--accent); }
+.contacts a span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contacts a svg { color: var(--accent); }
+.contacts a.wide { grid-column: 1 / -1; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.stat { background: var(--accent-soft); border-radius: 12px; padding: 12px 10px; text-align: center; }
+.stat b { display: block; font-size: 20px; line-height: 1.2; color: var(--accent); }
+.stat small { display: block; font-size: 12px; line-height: 1.3; color: var(--muted); margin-top: 2px; }
+
+/* sections */
+section.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 18px 16px; margin-top: 14px; box-shadow: var(--shadow);
+}
+h2 {
+  font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  margin: 0 0 12px; font-weight: 700;
+}
+p { margin: 0 0 8px; }
+p:last-child { margin-bottom: 0; }
+
+.skills { display: grid; gap: 12px; }
+.skill-row b { display: block; font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { background: var(--chip); border-radius: 8px; padding: 4px 9px; font-size: 13.5px; line-height: 1.35; }
+
+.job { padding: 14px 0; border-top: 1px solid var(--line); }
+.job:first-of-type { border-top: 0; padding-top: 0; }
+.job:last-child { padding-bottom: 0; }
+.job h3 { font-size: 17px; margin: 0; line-height: 1.3; }
+.job .pos { font-weight: 600; margin: 2px 0 0; }
+.job .when { color: var(--muted); font-size: 13.5px; margin: 2px 0 8px; }
+.job ul { margin: 6px 0 0; padding-left: 18px; }
+.job li { margin: 4px 0; }
+.job .sub { font-size: 13px; font-weight: 700; color: var(--muted); margin: 10px 0 2px; text-transform: uppercase; letter-spacing: .05em; }
+.job .stack { font-size: 13.5px; color: var(--muted); margin-top: 8px; }
+.win { color: var(--accent); font-weight: 600; }
+
+details.job summary { cursor: pointer; list-style: none; }
+details.job summary::-webkit-details-marker { display: none; }
+details.job summary .more { font-size: 13px; color: var(--accent); font-weight: 600; }
+details.job[open] summary .more { display: none; }
+
+.projects { display: grid; gap: 10px; }
+.proj { border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.proj b { display: block; }
+.proj span { font-size: 14px; color: var(--muted); }
+
+.edu { display: grid; gap: 12px; }
+.edu div b { display: block; }
+.edu div span { color: var(--muted); font-size: 14px; }
+
+.langs { display: flex; flex-wrap: wrap; gap: 8px; }
+.langs span { background: var(--chip); border-radius: 10px; padding: 6px 10px; font-size: 14px; }
+.langs small { color: var(--muted); }
+
+footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 0 8px; }
+
+/* bottom action bar */
+.actions {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+}
+.actions .row { max-width: 760px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.actions a {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 8px 4px; border-radius: 12px; color: var(--text); font-size: 12px; font-weight: 600;
+}
+.actions a:hover { text-decoration: none; background: var(--chip); }
+.actions a.primary { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .actions a.primary { color: #062a26; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .actions a.primary { color: #062a26; } }
+.actions svg.i { width: 20px; height: 20px; }
+
+@media (min-width: 640px) {
+  h1 { font-size: 32px; }
+  .avatar { width: 120px; height: 120px; }
+  .contacts { grid-template-columns: repeat(4, 1fr); }
+  .contacts a.wide { grid-column: span 2; }
+  section.card { padding: 22px 24px; }
+  .projects { grid-template-columns: 1fr 1fr; }
+}
+
+@media print {
+  :root { --bg:#fff; --card:#fff; --text:#000; --muted:#444; --line:#ddd; --accent:#0f766e; --accent-soft:#fff; --chip:#f2f2f2; --shadow:none; }
+  body { padding: 0; font-size: 12px; }
+  .topbar, .actions, .noprint { display: none !important; }
+  section.card { border: 0; padding: 8px 0; margin-top: 4px; break-inside: auto; }
+  .job { break-inside: avoid; }
+  details.job > *:not(summary) { display: block !important; }
+  details.job summary .more { display: none; }
+  a { color: #000; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand"><span data-l="ru">Турарбек Кайрош</span><span data-l="en">Turarbek Kairosh</span></div>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="iconbtn" onclick="window.print()" aria-label="PDF" title="PDF"><svg class="i"><use href="#i-download"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="hero-top">
+      <img class="avatar" src="photo.jpg" alt="" width="120" height="120">
+      <div>
+        <h1><span data-l="ru">Кайрош Турарбек</span><span data-l="en">Turarbek Kairosh</span></h1>
+        <p class="role"><span data-l="ru">QA Engineer / Разработчик</span><span data-l="en">QA Engineer / Developer</span></p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span><svg class="i"><use href="#i-pin"/></svg><span data-l="ru">Кульсары, Казахстан</span><span data-l="en">Kulsary, Kazakhstan</span></span>
+      <span><svg class="i"><use href="#i-cake"/></svg><span data-l="ru">25 лет (19.11.2000)</span><span data-l="en">25 y.o. (19 Nov 2000)</span></span>
+      <span><svg class="i"><use href="#i-briefcase"/></svg><span data-l="ru">Полная, частичная занятость, проекты</span><span data-l="en">Full-time, part-time, projects</span></span>
+    </div>
+
+    <div class="contacts">
+      <a href="tel:+77754333574"><svg class="i"><use href="#i-phone"/></svg><span>+7 775 433 3574</span></a>
+      <a href="https://t.me/XMMM19"><svg class="i"><use href="#i-send"/></svg><span>@XMMM19</span></a>
+      <a href="https://github.com/XMMM19"><svg class="i"><use href="#i-github"/></svg><span>GitHub</span></a>
+      <a href="https://wa.me/77754333574"><svg class="i"><use href="#i-chat"/></svg><span>WhatsApp</span></a>
+      <a class="wide" href="mailto:turarbek191100@gmail.com"><svg class="i"><use href="#i-mail"/></svg><span>turarbek191100@gmail.com</span></a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>2021</b><small data-l="ru">в IT с</small><small data-l="en">in IT since</small></div>
+      <div class="stat"><b>UI + API</b><small data-l="ru">автотесты</small><small data-l="en">test automation</small></div>
+      <div class="stat"><b>2</b><small data-l="ru">корпоративных курса</small><small data-l="en">corporate courses taught</small></div>
+    </div>
+  </div>
+
+  <section class="card">
+    <h2><span data-l="ru">О себе</span><span data-l="en">About</span></h2>
+    <p data-l="ru">QA Engineer и разработчик: опыт в страховой IT-среде и на фрилансе с 2021 года. Тестирую микросервисы, автоматизирую API и UI, делаю инструменты для анализа данных. Параллельно преподаю: вёл занятия в АУЭС и КазНУ, разработал и провёл корпоративные курсы по автоматизации тестирования на Python (TestIT) и по SQL. Развиваю веб-студию Weetro, делаю Telegram-ботов и аналитические сервисы. Ищу проекты, где можно сочетать тестирование, разработку и автоматизацию.</p>
+    <p data-l="en">QA Engineer and developer with experience in insurance IT and freelancing since 2021. I test microservices, automate API and UI testing, and build data-analysis tools. I also teach: I led classes at AUES and KazNU, and designed and delivered corporate courses on Python test automation (TestIT) and SQL. I run the Weetro web studio and build Telegram bots and analytics services. Looking for work that combines testing, development and automation.</p>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Навыки</span><span data-l="en">Skills</span></h2>
+    <div class="skills">
+      <div class="skill-row">
+        <b data-l="ru">Автоматизация</b><b data-l="en">Automation</b>
+        <div class="chips"><span>Python</span><span>pytest</span><span>Playwright</span><span>Cypress (JS)</span></div>
+      </div>
+      <div class="skill-row">
+        <b>API</b>
+        <div class="chips"><span>REST</span><span>Postman</span><span>cURL</span><span>JSON</span></div>
+      </div>
+      <div class="skill-row">
+        <b data-l="ru">Базы данных</b><b data-l="en">Databases</b>
+        <div class="chips"><span>SQL</span><span>PostgreSQL</span><span>Redis</span></div>
+      </div>
+      <div class="skill-row">
+        <b data-l="ru">Инструменты</b><b data-l="en">Tools</b>
+        <div class="chips"><span>Git</span><span>GitLab CI/CD</span><span>Docker / Compose</span><span>Linux</span><span>Jira</span><span>Confluence</span><span>Azure DevOps</span><span>VS Code</span><span>PhpStorm</span><span>Vim</span></div>
+      </div>
+      <div class="skill-row">
+        <b data-l="ru">Разработка</b><b data-l="en">Development</b>
+        <div class="chips"><span>Python (Django)</span><span data-l="ru">Telegram-боты</span><span data-l="en">Telegram bots</span><span data-l="ru">Веб-сайты</span><span data-l="en">Websites</span><span data-l="ru">API-интеграции</span><span data-l="en">API integrations</span></div>
+      </div>
+      <div class="skill-row">
+        <b data-l="ru">Тестирование</b><b data-l="en">Testing</b>
+        <div class="chips" data-l="ru"><span>Ручное и автоматизированное</span><span>Тест-дизайн</span><span>Смоук / регресс</span><span>Баг-репорты</span></div>
+        <div class="chips" data-l="en"><span>Manual &amp; automated</span><span>Test design</span><span>Smoke / regression</span><span>Bug reports</span></div>
+      </div>
+      <div class="skill-row">
+        <b data-l="ru">Преподавание</b><b data-l="en">Teaching</b>
+        <div class="chips" data-l="ru"><span>Учебные программы и УМК</span><span>Лекции и практики</span><span>Наставничество</span></div>
+        <div class="chips" data-l="en"><span>Curriculum design</span><span>Lectures &amp; labs</span><span>Mentoring</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Опыт работы</span><span data-l="en">Experience</span></h2>
+
+    <div class="job">
+      <h3><span data-l="ru">Страховая компания «Amanat»</span><span data-l="en">Amanat Insurance</span></h3>
+      <p class="pos">Middle Web QA Engineer</p>
+      <p class="when"><span data-l="ru">Июль 2024 — Октябрь 2025 · Алматы</span><span data-l="en">Jul 2024 — Oct 2025 · Almaty</span></p>
+      <ul data-l="ru">
+        <li>API-тестирование микросервисов (REST): авторизация, валидации, статусы, контрактные проверки.</li>
+        <li>UI-автотесты критических пользовательских сценариев (Cypress, JS).</li>
+        <li>Интеграционные и регрессионные прогоны, смоук перед релизами, анализ логов и сетевого трафика.</li>
+        <li>Тест-планы, тест-кейсы, чек-листы; баг-репорты в Jira и сопровождение до фикса.</li>
+        <li>Локальные окружения в Docker/Compose, работа с dev/stage, тестовые данные в SQL.</li>
+        <li>GitLab CI/CD: автозапуск тестов по MR и по расписанию, артефакты отчётов.</li>
+      </ul>
+      <ul data-l="en">
+        <li>API testing of REST microservices: auth, validation, status codes, contract checks.</li>
+        <li>UI automation for critical user flows (Cypress, JS).</li>
+        <li>Integration and regression runs, pre-release smoke tests, log and network traffic analysis.</li>
+        <li>Test plans, test cases, checklists; bug reports in Jira, followed through to the fix.</li>
+        <li>Local environments in Docker/Compose, dev/stage work, test data in SQL.</li>
+        <li>GitLab CI/CD: tests run on every MR and on schedule, with report artifacts.</li>
+      </ul>
+      <p class="sub"><span data-l="ru">Достижения</span><span data-l="en">Results</span></p>
+      <ul data-l="ru">
+        <li>Внедрил регресс-набор автотестов UI+API: <span class="win">−30% ручного регресса за спринт</span>.</li>
+        <li>Стандартизировал шаблоны баг-репортов и тест-кейсов: ретесты стали быстрее.</li>
+        <li>Стабилизировал локальные стенды в Docker для быстрого воспроизведения дефектов.</li>
+      </ul>
+      <ul data-l="en">
+        <li>Built a UI+API regression suite: <span class="win">−30% manual regression per sprint</span>.</li>
+        <li>Standardised bug report and test case templates, making retests faster.</li>
+        <li>Stabilised local Docker environments for fast defect reproduction.</li>
+      </ul>
+      <p class="stack"><span data-l="ru">Стек:</span><span data-l="en">Stack:</span> Linux (Ubuntu), tmux/nvim, Docker/Compose, Cypress, Postman/cURL, Git/GitLab CI/CD, Jira/Confluence, PostgreSQL, mitmproxy, Redis</p>
+    </div>
+
+    <div class="job">
+      <h3>FinTechPro</h3>
+      <p class="pos">Junior Manual Tester</p>
+      <p class="when"><span data-l="ru">Март 2023 — Февраль 2024 · Алматы</span><span data-l="en">Mar 2023 — Feb 2024 · Almaty</span></p>
+      <ul data-l="ru">
+        <li>Ручное тестирование мобильных приложений (Android/iOS) и веба по чек-листам и тест-кейсам.</li>
+        <li>Смоук, регресс, ретесты, воспроизведение и приоритизация дефектов.</li>
+        <li>Баг-репорты и отслеживание задач в Azure DevOps; работа с разработчиками и дизайнерами.</li>
+      </ul>
+      <ul data-l="en">
+        <li>Manual testing of mobile (Android/iOS) and web apps from checklists and test cases.</li>
+        <li>Smoke, regression, retests, defect reproduction and prioritisation.</li>
+        <li>Bug reports and task tracking in Azure DevOps; worked closely with developers and designers.</li>
+      </ul>
+      <p class="sub"><span data-l="ru">Достижения</span><span data-l="en">Results</span></p>
+      <ul data-l="ru">
+        <li>Упорядочил чек-листы и матрицу регресса: <span class="win">−30% времени прогона</span>.</li>
+        <li>Улучшил описания дефектов: меньше возвратов на доработку.</li>
+      </ul>
+      <ul data-l="en">
+        <li>Reorganised checklists and the regression matrix: <span class="win">−30% run time</span>.</li>
+        <li>Clearer defect descriptions, fewer tickets sent back for rework.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3><span data-l="ru">Фриланс</span><span data-l="en">Freelance</span></h3>
+      <p class="pos"><span data-l="ru">Разработчик / QA-инженер</span><span data-l="en">Developer / QA Engineer</span></p>
+      <p class="when"><span data-l="ru">2021 — сейчас · удалённо</span><span data-l="en">2021 — present · remote</span></p>
+      <ul data-l="ru">
+        <li>Проекты под ключ для частных лиц, ИП и ТОО: сайты, Telegram-боты, API-интеграции, парсеры, модули для OpenCart.</li>
+        <li>AI-агенты и чат-боты, интеграции с CRM и телефонией.</li>
+        <li>Тестирование проектов: ручное, API, автотесты.</li>
+        <li>Полный цикл: требования, оценка, разработка, тестирование, сдача и поддержка.</li>
+      </ul>
+      <ul data-l="en">
+        <li>End-to-end projects for individuals and small businesses: websites, Telegram bots, API integrations, scrapers, OpenCart modules.</li>
+        <li>AI agents and chatbots, CRM and telephony integrations.</li>
+        <li>Project testing: manual, API, automated.</li>
+        <li>Full cycle: requirements, estimates, development, testing, delivery and support.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Преподавание</span><span data-l="en">Teaching</span></h2>
+
+    <div class="job">
+      <h3>TestIT <span style="font-weight:400;color:var(--muted)">(<span data-l="ru">Астана</span><span data-l="en">Astana</span>)</span></h3>
+      <p class="pos"><span data-l="ru">Курс «Автоматизация тестирования на Python»</span><span data-l="en">Course: “Test Automation with Python”</span></p>
+      <p class="when"><span data-l="ru">29.05.2026 — 25.09.2026 · онлайн · 15 недель</span><span data-l="en">May 29 — Sep 25, 2026 · online · 15 weeks</span></p>
+      <ul data-l="ru">
+        <li>Провёл курс повышения квалификации для двух групп сотрудников.</li>
+        <li>Разработал структуру курса и материалы: презентации, примеры кода, практика, итоговый проект.</li>
+        <li>Увидел, что слушатели не знают основ Python, и перестроил программу: Python с нуля → pytest → Playwright.</li>
+      </ul>
+      <ul data-l="en">
+        <li>Delivered an upskilling course to two groups of employees.</li>
+        <li>Designed the course structure and materials: slides, code samples, exercises, final project.</li>
+        <li>Spotted that students lacked Python basics and rebuilt the programme: Python from scratch → pytest → Playwright.</li>
+      </ul>
+      <p class="stack"><span data-l="ru">Стек курса:</span><span data-l="en">Course stack:</span> Python, pytest, Playwright, Git</p>
+    </div>
+
+    <div class="job">
+      <h3><span data-l="ru">ТОО «KEMEL-MUGALIM»</span><span data-l="en">KEMEL-MUGALIM LLP</span></h3>
+      <p class="pos"><span data-l="ru">Курс «Основы и продвинутые техники SQL»</span><span data-l="en">Course: “SQL Fundamentals and Advanced Techniques”</span></p>
+      <p class="when"><span data-l="ru">06.04.2026 — 17.04.2026 · онлайн · 36 акад. часов</span><span data-l="en">Apr 6 — Apr 17, 2026 · online · 36 academic hours</span></p>
+      <ul data-l="ru">
+        <li>Разработал УМК: рабочую программу, результаты обучения, критерии оценки, план каждой лекции.</li>
+        <li>9 презентаций, SQL-примеры, практические и домашние задания, входное и итоговое тестирование.</li>
+        <li>Темы: JOIN, подзапросы и CTE, транзакции, индексы, партиционирование, оконные функции, витрины данных.</li>
+      </ul>
+      <ul data-l="en">
+        <li>Built the full course kit: syllabus, learning outcomes, grading criteria, plan for every lecture.</li>
+        <li>9 slide decks, SQL examples, labs and homework, entry and final tests.</li>
+        <li>Topics: JOINs, subqueries and CTEs, transactions, indexes, partitioning, window functions, data marts.</li>
+      </ul>
+      <p class="stack"><span data-l="ru">Стек курса:</span><span data-l="en">Course stack:</span> PostgreSQL, DBeaver</p>
+    </div>
+
+    <div class="job">
+      <h3><span data-l="ru">АУЭС и КазНУ им. аль-Фараби</span><span data-l="en">AUES and Al-Farabi KazNU</span></h3>
+      <p class="pos"><span data-l="ru">Преподаватель</span><span data-l="en">Lecturer</span></p>
+      <p class="when"><span data-l="ru">2022 — 2023 · Алматы</span><span data-l="en">2022 — 2023 · Almaty</span></p>
+      <ul data-l="ru"><li>Занятия по направлению «Автоматизация и управление» и по программированию. Также веду индивидуальные и корпоративные занятия по программированию и тестированию.</li></ul>
+      <ul data-l="en"><li>Classes in Automation &amp; Control and programming. I also run private and corporate sessions on programming and testing.</li></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Проекты</span><span data-l="en">Projects</span></h2>
+    <div class="projects">
+      <div class="proj">
+        <b>Archimedes Backend</b>
+        <span data-l="ru">Django 5 + docxtpl. Генерация медицинских отчётов УЗИ с таблицами и форматированием.</span>
+        <span data-l="en">Django 5 + docxtpl. Generates formatted ultrasound medical reports with tables and rich text.</span>
+      </div>
+      <div class="proj">
+        <b>Bybit OrderBook Parser</b>
+        <span data-l="ru">Python + Redis. CLI для сбора данных с REST и WebSocket API, многопроцессная обработка.</span>
+        <span data-l="en">Python + Redis. CLI collecting REST and WebSocket API data with multiprocessing.</span>
+      </div>
+      <div class="proj">
+        <b>CalcPro Telegram Bot</b>
+        <span data-l="ru">Анализ Excel-отчётов iiko OSV с подсветкой отклонений и процентными расчётами.</span>
+        <span data-l="en">Analyses iiko OSV Excel reports, highlighting deviations and computing percentages.</span>
+      </div>
+      <div class="proj">
+        <b><a href="https://weetro.kz">Weetro.kz</a></b>
+        <span data-l="ru">Веб-студия и портфолио: боты, сайты, API, модули OpenCart.</span>
+        <span data-l="en">Web studio and portfolio: bots, websites, APIs, OpenCart modules.</span>
+      </div>
+      <div class="proj">
+        <b><a href="https://xmmm.kz">xmmm.kz</a></b>
+        <span data-l="ru">Сайт-приглашение с анимацией, своими шрифтами и RSVP через Google-форму.</span>
+        <span data-l="en">Invitation website with animation, custom fonts and a Google Forms RSVP.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Образование</span><span data-l="en">Education</span></h2>
+    <div class="edu">
+      <div>
+        <b><span data-l="ru">Магистратура · 2022 — 2024</span><span data-l="en">Master's degree · 2022 — 2024</span></b>
+        <span data-l="ru">КазНУ им. аль-Фараби, ФИТ · «Бизнес-аналитика и Big Data»</span>
+        <span data-l="en">Al-Farabi Kazakh National University, IT faculty · Business Analytics &amp; Big Data</span>
+      </div>
+      <div>
+        <b><span data-l="ru">Бакалавриат · 2018 — 2022</span><span data-l="en">Bachelor's degree · 2018 — 2022</span></b>
+        <span data-l="ru">КазНУ им. аль-Фараби, ФИТ · «Автоматизация и управление»</span>
+        <span data-l="en">Al-Farabi Kazakh National University, IT faculty · Automation &amp; Control</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span data-l="ru">Языки</span><span data-l="en">Languages</span></h2>
+    <div class="langs">
+      <span><span data-l="ru">Казахский</span><span data-l="en">Kazakh</span> <small data-l="ru">— родной</small><small data-l="en">— native</small></span>
+      <span><span data-l="ru">Русский</span><span data-l="en">Russian</span> <small>— C1</small></span>
+      <span><span data-l="ru">Английский</span><span data-l="en">English</span> <small>— A2</small></span>
+    </div>
+  </section>
+
+  <footer>
+    <span data-l="ru">Обновлено: октябрь 2026</span><span data-l="en">Updated: October 2026</span> · xmmm19.github.io/resume
+  </footer>
+</main>
+
+<nav class="actions noprint" aria-label="Contact">
+  <div class="row">
+    <a class="primary" href="tel:+77754333574"><svg class="i"><use href="#i-phone"/></svg><span data-l="ru">Позвонить</span><span data-l="en">Call</span></a>
+    <a href="https://wa.me/77754333574"><svg class="i"><use href="#i-chat"/></svg>WhatsApp</a>
+    <a href="https://t.me/XMMM19"><svg class="i"><use href="#i-send"/></svg>Telegram</a>
+    <a href="contact.vcf" download="Turarbek-Kairosh.vcf"><svg class="i"><use href="#i-user-plus"/></svg><span data-l="ru">В контакты</span><span data-l="en">Save</span></a>
+  </div>
+</nav>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var titles = { ru: "Турарбек Кайрош — QA Engineer", en: "Turarbek Kairosh — QA Engineer" };
+  function setLang(lang) {
+    root.setAttribute("data-lang", lang);
+    root.setAttribute("lang", lang);
+    document.title = titles[lang];
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
+    });
+  }
+  var stored = null;
+  try { stored = localStorage.getItem("lang"); } catch (e) {}
+  var fromUrl = new URLSearchParams(location.search).get("lang");
+  var lang = fromUrl || stored || "ru";
+  setLang(lang === "en" ? "en" : "ru");
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var l = b.getAttribute("data-set-lang");
+      setLang(l);
+      try { localStorage.setItem("lang", l); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
