@@ -11,6 +11,9 @@
 <meta property="og:url" content="https://xmmm19.github.io/resume/">
 <meta property="og:image" content="https://xmmm19.github.io/resume/photo.jpg">
 <meta name="theme-color" content="#0f766e">
+<script>
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3ETK%3C/text%3E%3C/svg%3E">
 <style>
 :root {
@@ -67,8 +70,45 @@ html[data-lang="en"] [data-l="ru"] { display: none !important; }
   -webkit-backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
 }
-.topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 12px; }
-.topbar .brand { font-weight: 700; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar .bar { display: flex; align-items: center; justify-content: space-between; height: 52px; gap: 12px; }
+.topbar .brand { font-weight: 700; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+/* section nav */
+.secnav { display: flex; gap: 6px; overflow-x: auto; padding: 0 16px 10px; max-width: 760px; margin: 0 auto; scrollbar-width: none; scroll-behavior: smooth; }
+.secnav::-webkit-scrollbar { display: none; }
+.secnav a {
+  flex: none; padding: 6px 12px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+  color: var(--muted); background: var(--chip); white-space: nowrap;
+}
+.secnav a:hover { text-decoration: none; color: var(--text); }
+.secnav a.active { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .secnav a.active { color: #062a26; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .secnav a.active { color: #062a26; } }
+html { scroll-behavior: smooth; }
+#contacts, section.card { scroll-margin-top: 112px; }
+
+/* share sheet */
+dialog.sheet {
+  border: 0; padding: 0; border-radius: 20px; width: min(360px, calc(100vw - 32px));
+  background: var(--card); color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+dialog.sheet::backdrop { background: rgba(10,12,16,.55); }
+.sheet-in { padding: 20px; text-align: center; position: relative; }
+.sheet h3 { margin: 0 0 4px; font-size: 18px; }
+.sheet .hint { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+.sheet .qrbox { background: #fff; border-radius: 16px; padding: 14px; display: inline-block; }
+.sheet .qrbox img { display: block; width: 220px; height: 220px; }
+.sheet .url { font-weight: 600; color: var(--accent); margin: 12px 0 14px; font-size: 15px; word-break: break-all; }
+.sheet .btns { display: grid; gap: 8px; }
+.sheet .btns button {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  font: 600 15px/1 inherit; font-family: inherit; padding: 12px; border-radius: 12px; cursor: pointer;
+}
+.sheet .btns button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+:root[data-theme="dark"] .sheet .btns button.primary { color: #062a26; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sheet .btns button.primary { color: #062a26; } }
+.sheet .close { position: absolute; top: 12px; right: 12px; border: 0; background: var(--chip); }
 .tools { display: flex; gap: 8px; align-items: center; }
 .seg { display: inline-flex; background: var(--chip); border-radius: 999px; padding: 3px; }
 .seg button {
@@ -192,7 +232,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
 @media print {
   :root { --bg:#fff; --card:#fff; --text:#000; --muted:#444; --line:#ddd; --accent:#0f766e; --accent-soft:#fff; --chip:#f2f2f2; --shadow:none; }
   body { padding: 0; font-size: 12px; }
-  .topbar, .actions, .noprint { display: none !important; }
+  .topbar, .actions, .noprint, dialog { display: none !important; }
   section.card { border: 0; padding: 8px 0; margin-top: 4px; break-inside: auto; }
   .job { break-inside: avoid; }
   details.job > *:not(summary) { display: block !important; }
@@ -214,24 +254,41 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
   <symbol id="i-cake" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
   <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
 </svg>
 
 <header class="topbar">
-  <div class="wrap">
+  <div class="wrap bar">
     <div class="brand"><span data-l="ru">Турарбек Кайрош</span><span data-l="en">Turarbek Kairosh</span></div>
     <div class="tools">
       <div class="seg" role="group" aria-label="Язык / Language">
         <button type="button" data-set-lang="ru" aria-pressed="true">RU</button>
         <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
-      <button type="button" class="iconbtn" onclick="window.print()" aria-label="PDF" title="PDF"><svg class="i"><use href="#i-download"/></svg></button>
+      <button type="button" class="iconbtn" id="theme-btn" aria-label="Тема / Theme" title="Тема / Theme"><svg class="i"><use href="#i-moon"/></svg></button>
+      <button type="button" class="iconbtn" id="qr-btn" aria-label="QR" title="QR"><svg class="i"><use href="#i-qr"/></svg></button>
     </div>
   </div>
+  <nav class="secnav" aria-label="Разделы / Sections">
+    <a href="#contacts"><span data-l="ru">Контакты</span><span data-l="en">Contacts</span></a>
+    <a href="#about"><span data-l="ru">О себе</span><span data-l="en">About</span></a>
+    <a href="#skills"><span data-l="ru">Навыки</span><span data-l="en">Skills</span></a>
+    <a href="#experience"><span data-l="ru">Опыт</span><span data-l="en">Experience</span></a>
+    <a href="#teaching"><span data-l="ru">Преподавание</span><span data-l="en">Teaching</span></a>
+    <a href="#projects"><span data-l="ru">Проекты</span><span data-l="en">Projects</span></a>
+    <a href="#education"><span data-l="ru">Образование</span><span data-l="en">Education</span></a>
+    <a href="#languages"><span data-l="ru">Языки</span><span data-l="en">Languages</span></a>
+  </nav>
 </header>
 
 <main class="wrap">
 
-  <div class="hero">
+  <div class="hero" id="contacts">
     <div class="hero-top">
       <img class="avatar" src="photo.jpg" alt="" width="120" height="120">
       <div>
@@ -261,13 +318,13 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </div>
 
-  <section class="card">
+  <section class="card" id="about">
     <h2><span data-l="ru">О себе</span><span data-l="en">About</span></h2>
     <p data-l="ru">QA Engineer и разработчик: опыт в страховой IT-среде и на фрилансе с 2021 года. Тестирую микросервисы, автоматизирую API и UI, делаю инструменты для анализа данных. Параллельно преподаю: вёл занятия в АУЭС и КазНУ, разработал и провёл корпоративные курсы по автоматизации тестирования на Python (TestIT) и по SQL. Развиваю веб-студию Weetro, делаю Telegram-ботов и аналитические сервисы. Ищу проекты, где можно сочетать тестирование, разработку и автоматизацию.</p>
     <p data-l="en">QA Engineer and developer with experience in insurance IT and freelancing since 2021. I test microservices, automate API and UI testing, and build data-analysis tools. I also teach: I led classes at AUES and KazNU, and designed and delivered corporate courses on Python test automation (TestIT) and SQL. I run the Weetro web studio and build Telegram bots and analytics services. Looking for work that combines testing, development and automation.</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="skills">
     <h2><span data-l="ru">Навыки</span><span data-l="en">Skills</span></h2>
     <div class="skills">
       <div class="skill-row">
@@ -303,7 +360,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="experience">
     <h2><span data-l="ru">Опыт работы</span><span data-l="en">Experience</span></h2>
 
     <div class="job">
@@ -384,7 +441,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="teaching">
     <h2><span data-l="ru">Преподавание</span><span data-l="en">Teaching</span></h2>
 
     <div class="job">
@@ -430,7 +487,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="projects">
     <h2><span data-l="ru">Проекты</span><span data-l="en">Projects</span></h2>
     <div class="projects">
       <div class="proj">
@@ -461,7 +518,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="education">
     <h2><span data-l="ru">Образование</span><span data-l="en">Education</span></h2>
     <div class="edu">
       <div>
@@ -477,7 +534,7 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
     </div>
   </section>
 
-  <section class="card">
+  <section class="card" id="languages">
     <h2><span data-l="ru">Языки</span><span data-l="en">Languages</span></h2>
     <div class="langs">
       <span><span data-l="ru">Казахский</span><span data-l="en">Kazakh</span> <small data-l="ru">— родной</small><small data-l="en">— native</small></span>
@@ -500,9 +557,92 @@ footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px
   </div>
 </nav>
 
+<dialog class="sheet" id="qr-sheet">
+  <div class="sheet-in">
+    <button type="button" class="iconbtn close" data-close aria-label="Закрыть / Close"><svg class="i"><use href="#i-x"/></svg></button>
+    <h3><span data-l="ru">Резюме по QR</span><span data-l="en">Resume QR code</span></h3>
+    <p class="hint"><span data-l="ru">Наведите камеру телефона</span><span data-l="en">Point your phone camera here</span></p>
+    <div class="qrbox"><img src="qr.svg" alt="QR: xmmm19.github.io/resume" width="220" height="220"></div>
+    <div class="url">xmmm19.github.io/resume</div>
+    <div class="btns">
+      <button type="button" class="primary" id="share-btn"><svg class="i"><use href="#i-share"/></svg><span data-l="ru">Поделиться ссылкой</span><span data-l="en">Share link</span></button>
+      <button type="button" id="copy-btn"><svg class="i"><use href="#i-copy"/></svg><span data-l="ru">Копировать ссылку</span><span data-l="en">Copy link</span></button>
+      <button type="button" id="pdf-btn"><svg class="i"><use href="#i-download"/></svg><span data-l="ru">Сохранить PDF</span><span data-l="en">Save as PDF</span></button>
+    </div>
+  </div>
+</dialog>
+
 <script>
 (function () {
   var root = document.documentElement;
+  var URL_ = "https://xmmm19.github.io/resume/";
+
+  // theme
+  var themeBtn = document.getElementById("theme-btn");
+  var darkMq = window.matchMedia("(prefers-color-scheme: dark)");
+  function currentTheme() { return root.getAttribute("data-theme") || (darkMq.matches ? "dark" : "light"); }
+  function paintThemeBtn() {
+    themeBtn.querySelector("use").setAttribute("href", currentTheme() === "dark" ? "#i-sun" : "#i-moon");
+  }
+  themeBtn.addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    paintThemeBtn();
+  });
+  darkMq.addEventListener && darkMq.addEventListener("change", paintThemeBtn);
+  paintThemeBtn();
+
+  // QR sheet
+  var sheet = document.getElementById("qr-sheet");
+  document.getElementById("qr-btn").addEventListener("click", function () { sheet.showModal(); });
+  sheet.addEventListener("click", function (e) {
+    if (e.target === sheet || e.target.closest("[data-close]")) sheet.close();
+  });
+  var shareBtn = document.getElementById("share-btn");
+  if (!navigator.share) shareBtn.style.display = "none";
+  shareBtn.addEventListener("click", function () {
+    navigator.share({ title: document.title, url: URL_ }).catch(function () {});
+  });
+  var copyBtn = document.getElementById("copy-btn");
+  copyBtn.addEventListener("click", function () {
+    var label = copyBtn.querySelector("[data-l='" + root.getAttribute("data-lang") + "']");
+    var old = label.textContent;
+    function done(ok) {
+      label.textContent = ok ? (root.getAttribute("data-lang") === "en" ? "Copied!" : "Скопировано!") : URL_;
+      setTimeout(function () { label.textContent = old; }, 1800);
+    }
+    if (navigator.clipboard) navigator.clipboard.writeText(URL_).then(function () { done(true); }, function () { done(false); });
+    else done(false);
+  });
+  document.getElementById("pdf-btn").addEventListener("click", function () {
+    sheet.close();
+    setTimeout(function () { window.print(); }, 150);
+  });
+
+  // section nav: highlight the section in view
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".secnav a"));
+  var nav = document.querySelector(".secnav");
+  var targets = navLinks.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  var activeId = null;
+  function setActive(id) {
+    if (id === activeId) return;
+    activeId = id;
+    navLinks.forEach(function (a) {
+      var on = a.getAttribute("href") === "#" + id;
+      a.classList.toggle("active", on);
+      if (on) nav.scrollTo({ left: a.offsetLeft - (nav.clientWidth - a.offsetWidth) / 2, behavior: "smooth" });
+    });
+  }
+  function onScroll() {
+    var line = 130, id = targets[0].id;
+    targets.forEach(function (t) { if (t.getBoundingClientRect().top <= line) id = t.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) id = targets[targets.length - 1].id;
+    setActive(id);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
   var titles = { ru: "Турарбек Кайрош — QA Engineer", en: "Turarbek Kairosh — QA Engineer" };
   function setLang(lang) {
     root.setAttribute("data-lang", lang);
